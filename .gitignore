@@ -940,3 +940,4 @@ venv/Scripts/activate.ps1
 venv/Scripts/activate_this.py
 venv/Scripts/deactivate.bat
 venv/pip-selfcheck.json
+venv/
