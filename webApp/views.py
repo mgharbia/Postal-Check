@@ -1,5 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.core.context_processors import csrf
 
 from .models import Package
 
@@ -13,7 +14,9 @@ def index(request):
     return render(request, 'index.html', {'packages': packages})
 
 def add(request):
-    return render(request, 'add.html')
+    c = {}
+    c.update(csrf(request))
+    return render(request, 'add.html', c)
 	
 def additem(request):
     Name = self.request.get('Name')
