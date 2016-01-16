@@ -4,4 +4,5 @@ import webApp.views
 
 urlpatterns = patterns('',
     url(r'^$', webApp.views.index, name='index'),
+    url(r'^add', webApp.views.index, name='add'),
 )

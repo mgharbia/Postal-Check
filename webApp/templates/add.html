@@ -1,0 +1,14 @@
+
+{% load staticfiles %}
+
+{% block content %}
+<div class="container">
+	<h1> Add Item</h1>
+	<form action="/additem" method="POST">
+			Item Name <input type="text" name="Link"/>
+			Tracking Number <input type="text" name="Category"/>
+			<input type="submit"/>
+	</form>
+</div>
+
+{% endblock %}
