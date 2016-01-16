@@ -83,7 +83,7 @@ DATABASES = {
 DATABASES['default'] =  dj_database_url.config()
 
 # Enable Connection Pooling (if desired)
-#DATABASES['default']['ENGINE'] = 'django_postgrespool'
+DATABASES['default']['ENGINE'] = 'django_postgrespool'
 
 # Password validation
 # https://docs.djangoproject.com/en/{{ docs_version }}/ref/settings/#auth-password-validators
