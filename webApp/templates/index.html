@@ -66,10 +66,10 @@
     <div class="art-post-body">
 
 	<p>	  
-	{% for clip in clips %}  
+	{% for package in packages %}  
 	<div class="art-post-article">
-        <p style="position:relative; left:35%">{{clip.clipTitle}}</p>
-		{{clip.link}}
+        <p style="position:relative; left:35%">{{package.order}}</p>
+		{{package.order}}
 	</div>
     {% endfor %}
 	</p>
