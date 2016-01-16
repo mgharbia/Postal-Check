@@ -23,5 +23,5 @@ def additem(request):
     TrackNumber = self.request.get('TrackNumber')
     #package.save()
 	
-    self.redirect('/')
+    self.redirect('./')
 
