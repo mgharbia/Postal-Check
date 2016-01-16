@@ -14,4 +14,11 @@ def index(request):
 
 def add(request):
     return render(request, 'add.html')
+	
+def additem(request):
+    Name = self.request.get('Name')
+    TrackNumber = self.request.get('TrackNumber')
+    #package.save()
+	
+    self.redirect('/')
 
