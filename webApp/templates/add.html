@@ -3,7 +3,8 @@
 
 {% block content %}
 <div class="container">
-	<h2> Add New Item</h2>
+	<h3> Add New Item</h3>
+	</t>
 	<form action="/additem" method="POST">{% csrf_token %}
 			Item Name <input type="text" name="Name"/>
 			Tracking Number <input type="text" name="TrackNumber"/>
