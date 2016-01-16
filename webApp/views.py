@@ -8,7 +8,7 @@ def index(request):
 	package = Package()
 	package.save()
 	
-	packages = Packages.objects.all()
+	packages = Package.objects.all()
 	
     return render(request, 'index.html', {'packages': packages})
 
