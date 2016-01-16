@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.context_processors import csrf
+from django.shortcuts import redirect
 
 from .models import Package
 
