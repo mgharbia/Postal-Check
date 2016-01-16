@@ -4,7 +4,7 @@
 {% block content %}
 <div class="container">
 	<h2> Add New Item</h2>
-	<form action="/additem" method="POST">{{csrf_token}}
+	<form action="/additem" method="POST">{% csrf_token %}
 			Item Name <input type="text" name="Name"/>
 			Tracking Number <input type="text" name="TrackNumber"/>
 			<input type="submit"/>
