@@ -23,8 +23,7 @@ def additem(request):
     ItemName = self.request.get('Name')
     ItemNumber = self.request.get('TrackNumber')
     
-    package = Package()
-    Blog(Name=ItemName, TrackNumber=ItemNumber, Status='NA')
+    package = Package(Name=ItemName, TrackNumber=ItemNumber, Status='NA')
     package.save()
 	
     return redirect('./')
