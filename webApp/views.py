@@ -20,11 +20,16 @@ def add(request):
     return render(request, 'add.html', c)
 	
 def additem(request):
-    ItemName = self.request.get('Name')
-    ItemNumber = self.request.get('TrackNumber')
+    def post(self):
+        #ItemName = self.request.get('Name')
+        #ItemNumber = self.request.get('TrackNumber')
     
-    order = Order(name='test', trackNumber='test num', status='NA')
-    order.save()
+        #order = Order(name='test', trackNumber='test num', status='NA')
+        order = Order()
+        order.name = 'test'
+        order.trackNumber = '123'
+        order.status = 'NA'
+        order.save()
     
-    return redirect('./')
+        return redirect('./')
 
