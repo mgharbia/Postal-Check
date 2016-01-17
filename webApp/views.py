@@ -22,8 +22,8 @@ def add(request):
 	
 class newitem(View):
     def post(self, request, *args, **kwargs):
-        ItemName = self.request.get('Name')
-        ItemNumber = self.request.get('TrackNumber')
+        ItemName = self.request.POST.get("Name", "")
+        ItemNumber = self.request.POST.get("TrackNumber", "")
     
         #order = Order(name='test', trackNumber='test num', status='NA')
         order = Order()
