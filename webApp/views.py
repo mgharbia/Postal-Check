@@ -20,9 +20,12 @@ def add(request):
     return render(request, 'add.html', c)
 	
 def additem(request):
-    Name = self.request.get('Name')
-    TrackNumber = self.request.get('TrackNumber')
-    #package.save()
+    ItemName = self.request.get('Name')
+    ItemNumber = self.request.get('TrackNumber')
+    
+    package = Package()
+    Blog(Name=ItemName, TrackNumber=ItemNumber, Status='NA')
+    package.save()
 	
     return redirect('./')
 
