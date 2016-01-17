@@ -20,7 +20,7 @@ def add(request):
     c.update(csrf(request))
     return render(request, 'add.html', c)
 	
-class additem(view):
+class additem(View):
     def post(self, request, *args, **kwargs):
         #ItemName = self.request.get('Name')
         #ItemNumber = self.request.get('TrackNumber')
