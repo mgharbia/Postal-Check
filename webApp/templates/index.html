@@ -3,10 +3,10 @@
 
 {% block content %}
 <div class="container">
-	{% for package in packages %}  
+	{% for order in orders %}  
 		<div class="art-post-article">
-			<p style="position:relative; left:35%">{{package.Name}}</p>
-			{{package.Status}}
+			<p style="position:relative; left:35%">{{order.Name}}</p>
+			{{order.Status}}
 		</div>
     {% endfor %}
 </div>

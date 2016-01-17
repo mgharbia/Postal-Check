@@ -13,7 +13,7 @@ def index(request):
 	
     order = Order.objects.all()
 	
-    return render(request, 'index.html', {'packages': order})
+    return render(request, 'index.html', {'orders': order})
 
 def add(request):
     c = {}
