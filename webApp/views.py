@@ -32,5 +32,5 @@ def newitem(request):
         order.status = 'NA'
         order.save()
     
-        return redirect('./')
-        #return HttpResponse('Saved')
+        #return redirect('./')
+        return HttpResponse('added')
