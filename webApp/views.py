@@ -20,17 +20,17 @@ def add(request):
     c.update(csrf(request))
     return render(request, 'add.html', c)
 	
-def additem(view):
-    def post(self):
+class additem(view):
+    def post(self, request, *args, **kwargs):
         #ItemName = self.request.get('Name')
         #ItemNumber = self.request.get('TrackNumber')
     
         #order = Order(name='test', trackNumber='test num', status='NA')
-        order = Order()
-        order.name = 'test'
-        order.trackNumber = '123'
-        order.status = 'NA'
-        order.save()
+        #order = Order()
+        #order.name = 'test'
+        #order.trackNumber = '123'
+        #order.status = 'NA'
+        #order.save()
     
         #return redirect('./')
         return HttpResponse('Saved')
