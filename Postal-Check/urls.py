@@ -5,5 +5,5 @@ import webApp.views
 urlpatterns = patterns('',
     url(r'^$', webApp.views.index, name='index'),
     url(r'^add', webApp.views.add, name='add'),
-	url(r'^newitem', webApp.views.newitem, name='newitem'),
+	url(r'^newitem', webApp.views.newitem.as_view(), name='newitem'),
 )

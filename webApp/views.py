@@ -20,10 +20,10 @@ def add(request):
     c.update(csrf(request))
     return render(request, 'add.html', c)
 	
-def newitem(request):
-    #def post(self):
-        ItemName = request.get('Name')
-        ItemNumber = request.get('TrackNumber')
+class newitem(View):
+    def post(self, request, *args, **kwargs):
+        ItemName = self.request.get('Name')
+        ItemNumber = self.request.get('TrackNumber')
     
         #order = Order(name='test', trackNumber='test num', status='NA')
         order = Order()
