@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from django.core.context_processors import csrf
 from django.shortcuts import redirect
+from django.views.generic import View
 
 from .models import Order
 
@@ -19,7 +20,7 @@ def add(request):
     c.update(csrf(request))
     return render(request, 'add.html', c)
 	
-def additem(request):
+def additem(view):
     def post(self):
         #ItemName = self.request.get('Name')
         #ItemNumber = self.request.get('TrackNumber')
@@ -31,5 +32,5 @@ def additem(request):
         order.status = 'NA'
         order.save()
     
-        return redirect('./')
-
+        #return redirect('./')
+        return HttpResponse('Saved')
