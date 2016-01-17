@@ -22,8 +22,8 @@ def add(request):
 	
 def newitem(request):
     #def post(self):
-        ItemName = self.request.get('Name')
-        ItemNumber = self.request.get('TrackNumber')
+        ItemName = request.get('Name')
+        ItemNumber = request.get('TrackNumber')
     
         #order = Order(name='test', trackNumber='test num', status='NA')
         order = Order()
