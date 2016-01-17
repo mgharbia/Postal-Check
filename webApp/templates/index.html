@@ -5,8 +5,7 @@
 <div class="container">
 	{% for order in orders %}  
 		<div class="art-post-article">
-			<p style="position:relative; left:35%">{{order.name}}</p>
-			{{order.status}}
+			<p style="position:relative; left:35%">{{order.name}} : {{order.status}}</p>
 		</div>
     {% endfor %}
 </div>
