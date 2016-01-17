@@ -3,16 +3,16 @@ from django.http import HttpResponse
 from django.core.context_processors import csrf
 from django.shortcuts import redirect
 
-from .models import Package
+from .models import Order
 
 def index(request):
     #return HttpResponse('Hello from Python!')
     #package = Package()
     #package.save()
 	
-    packages = Package.objects.all()
+    order = Order.objects.all()
 	
-    return render(request, 'index.html', {'packages': packages})
+    return render(request, 'index.html', {'packages': order})
 
 def add(request):
     c = {}
@@ -23,8 +23,8 @@ def additem(request):
     ItemName = self.request.get('Name')
     ItemNumber = self.request.get('TrackNumber')
     
-    package = Package(name='test', trackNumber='test num', status='NA')
-    package.save()
+    order = Order(name='test', trackNumber='test num', status='NA')
+    order.save()
     
     return redirect('./')
 
