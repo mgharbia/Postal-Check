@@ -3,6 +3,8 @@ from django.http import HttpResponse
 from django.core.context_processors import csrf
 from django.shortcuts import redirect
 from django.views.generic import View
+import urllib, json
+
 
 from .models import Order
 
@@ -12,8 +14,10 @@ def index(request):
     #package.save()
 	
     order = Order.objects.all()
-	
-    return render(request, 'index.html', {'orders': order})
+    url = "http://track-chinapost.com/track_chinapost.php?code=pdxn8&cookie=/home/johnyu/vhosts/track-chinapost.com/public/cookie/ikfoemkuh3aihob64hlc0evlp4cookie183.txt&num=RB710452392CN"
+    response = urllib.urlopen(url)
+    return HttpResponse(response)
+    #return render(request, 'index.html', {'orders': order})
 
 def add(request):
     c = {}

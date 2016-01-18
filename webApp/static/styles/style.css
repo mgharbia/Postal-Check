@@ -1526,7 +1526,7 @@ input, select, textarea
 .art-post-article
 {
   position: relative;
-  width:44%;
+  width:100%;
   padding: 10px;
   float:left;
 }
