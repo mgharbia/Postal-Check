@@ -3,7 +3,7 @@ from django.http import HttpResponse
 from django.core.context_processors import csrf
 from django.shortcuts import redirect
 from django.views.generic import View
-import urllib, json
+import urllib3
 
 
 from .models import Order
