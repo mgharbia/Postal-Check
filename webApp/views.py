@@ -26,7 +26,7 @@ def index(request):
                 order.save()
             #else:
             #    return HttpResponse('NA')
-    return render(request, 'index.html', {'orders': order})
+    return render(request, 'index.html', {'orders': orders})
 
 	
 def add(request):
