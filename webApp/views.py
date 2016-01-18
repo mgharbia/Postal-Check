@@ -16,9 +16,9 @@ def index(request):
 		
     order = Order.objects.all()
     for order in orders:
-        if order.status = 'NA':
+        if order.status == 'NA':
             http = urllib3.PoolManager()
-            response = http.urlopen('GET',url, preload_content=False)
+            response = http.urlopen('GET',url + order.trackNumber, preload_content=False)
 
             jasonString = response.read().decode('utf-8')
             if jasonString.find('for distribution at the customer') != -1:
