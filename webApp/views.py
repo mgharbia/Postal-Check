@@ -12,7 +12,7 @@ def index(request):
     #return HttpResponse('Hello from Python!')
 
     order = Order.objects.all()
-    url = "http://www.israelpost.co.il/itemtrace.nsf/trackandtraceJSON?openagent&_=1375340219593&lang=EN&itemcode=RB710452392CN"
+    url = "http://www.israelpost.co.il/itemtrace.nsf/trackandtraceJSON?openagent&_=1375340219593&lang=EN&itemcode=RI713191696CN"
     http = urllib3.PoolManager()
     response = http.urlopen('GET',url, preload_content=False)
 
