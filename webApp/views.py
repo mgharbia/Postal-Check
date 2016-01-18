@@ -15,7 +15,9 @@ def index(request):
     url = "http://www.israelpost.co.il/itemtrace.nsf/trackandtraceJSON?openagent&_=1375340219593&lang=EN&itemcode=RB710452392CN"
     http = urllib3.PoolManager()
     response = http.urlopen('GET',url, preload_content=False)
-    if response.find('item arrived'):
+
+    jasonString = response.read().decode('utf-8')
+    if jasonString.find('item arrived'):
         return HttpResponse('Arrived')
     else:
         return HttpResponse('NA')
