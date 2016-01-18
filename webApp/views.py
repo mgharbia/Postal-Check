@@ -14,7 +14,7 @@ def index(request):
     #bad track RP325501964SG
     #good track RB710452392CN
 		
-    order = Order.objects.all()
+    orders = Order.objects.all()
     for order in orders:
         if order.status == 'NA':
             http = urllib3.PoolManager()
