@@ -14,7 +14,7 @@ def index(request):
     #package.save()
 	
     order = Order.objects.all()
-    url = "http://track-chinapost.com/track_chinapost.php?code=pdxn8&cookie=/home/johnyu/vhosts/track-chinapost.com/public/cookie/ikfoemkuh3aihob64hlc0evlp4cookie183.txt&num=RB710452392CN"
+    url = "http://www.israelpost.co.il/itemtrace.nsf/trackandtraceJSON?openagent&_=1375340219593&lang=EN&itemcode=RB710452392CN"
     http = urllib3.PoolManager()
     #response = urllib3.request.urlopen(url)
     response = http.urlopen('GET',url, preload_content=False)
