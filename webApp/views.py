@@ -10,15 +10,15 @@ from .models import Order
 
 def index(request):
     #return HttpResponse('Hello from Python!')
-    #package = Package()
-    #package.save()
-	
+
     order = Order.objects.all()
     url = "http://www.israelpost.co.il/itemtrace.nsf/trackandtraceJSON?openagent&_=1375340219593&lang=EN&itemcode=RB710452392CN"
     http = urllib3.PoolManager()
-    #response = urllib3.request.urlopen(url)
     response = http.urlopen('GET',url, preload_content=False)
-    return HttpResponse(response)
+    if response.find('item arrived'):
+        return HttpResponse('Arrived')
+    else:
+        return HttpResponse('NA')
     #return render(request, 'index.html', {'orders': order})
 
 def add(request):
