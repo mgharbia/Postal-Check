@@ -4,7 +4,7 @@ from django.core.context_processors import csrf
 from django.shortcuts import redirect
 from django.views.generic import View
 import urllib3
-from urllib3.request import urlopen
+#from urllib3.request import urlopen
 
 from .models import Order
 
@@ -15,7 +15,9 @@ def index(request):
 	
     order = Order.objects.all()
     url = "http://track-chinapost.com/track_chinapost.php?code=pdxn8&cookie=/home/johnyu/vhosts/track-chinapost.com/public/cookie/ikfoemkuh3aihob64hlc0evlp4cookie183.txt&num=RB710452392CN"
-    response = urllib3.request.urlopen(url)
+    http = urllib3.PoolManager()
+    #response = urllib3.request.urlopen(url)
+    response = http.urlopen('GET',url, preload_content=False)
     return HttpResponse(response)
     #return render(request, 'index.html', {'orders': order})
 
