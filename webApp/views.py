@@ -17,7 +17,7 @@ def index(request):
     response = http.urlopen('GET',url, preload_content=False)
 
     jasonString = response.read().decode('utf-8')
-    if jasonString.find('arrived'):
+    if jasonString.find('item arrived') != -1:
         return HttpResponse('Arrived')
     else:
         return HttpResponse('NA')
