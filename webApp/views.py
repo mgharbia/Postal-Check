@@ -26,7 +26,6 @@ def index(request):
                 order.save()
             #else:
             #    return HttpResponse('NA')
-    endfor
     return render(request, 'index.html', {'orders': order})
 
 	
