@@ -15,7 +15,7 @@ def index(request):
     #good track RB710452392CN
 		
     order = Order.objects.all()
-    for order in orders
+    for order in orders:
         if order.status = 'NA':
             http = urllib3.PoolManager()
             response = http.urlopen('GET',url, preload_content=False)
