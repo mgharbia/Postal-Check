@@ -15,7 +15,7 @@ def index(request):
 	
     order = Order.objects.all()
     url = "http://track-chinapost.com/track_chinapost.php?code=pdxn8&cookie=/home/johnyu/vhosts/track-chinapost.com/public/cookie/ikfoemkuh3aihob64hlc0evlp4cookie183.txt&num=RB710452392CN"
-    response = urllib.urlopen(url)
+    response = urllib3.urlopen(url)
     return HttpResponse(response)
     #return render(request, 'index.html', {'orders': order})
 
