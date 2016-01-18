@@ -10,19 +10,26 @@ from .models import Order
 
 def index(request):
     #return HttpResponse('Hello from Python!')
-
+    url = "http://www.israelpost.co.il/itemtrace.nsf/trackandtraceJSON?openagent&_=1375340219593&lang=EN&itemcode="
+    #bad track RP325501964SG
+    #good track RB710452392CN
+		
     order = Order.objects.all()
-    url = "http://www.israelpost.co.il/itemtrace.nsf/trackandtraceJSON?openagent&_=1375340219593&lang=EN&itemcode=RI713191696CN"
-    http = urllib3.PoolManager()
-    response = http.urlopen('GET',url, preload_content=False)
+    for order in orders
+        if order.status = 'NA':
+            http = urllib3.PoolManager()
+            response = http.urlopen('GET',url, preload_content=False)
 
-    jasonString = response.read().decode('utf-8')
-    if jasonString.find('item arrived') != -1:
-        return HttpResponse('Arrived')
-    else:
-        return HttpResponse('NA')
-    #return render(request, 'index.html', {'orders': order})
+            jasonString = response.read().decode('utf-8')
+            if jasonString.find('for distribution at the customer') != -1:
+                order.status = 'Arrived'
+                order.save()
+            #else:
+            #    return HttpResponse('NA')
+    endfor
+    return render(request, 'index.html', {'orders': order})
 
+	
 def add(request):
     c = {}
     c.update(csrf(request))
